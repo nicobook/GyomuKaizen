@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+def git(*command)
+  command = command.join(' ')
+  `git #{command}`
+end
+
+now_baranch = git('branch').match(/\* (.+)$/)[1]
+
+to_branch = ARGV[0]
+
+git :stash
+git :checkout, to_branch
+git :merge, now_baranch
+git :checkout, now_baranch
+git :stash, :pop
