@@ -1,0 +1,10 @@
+# 業務改善プロジェクト
+
+
+## git-mergeto
+
+    git mergeto merge_branche
+
+現在のブランチの内容を、指定した先のブランチにマージするだけ。
+
+by rosylilly
